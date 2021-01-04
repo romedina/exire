@@ -5,20 +5,26 @@ import {
 } from '../constants/colorSystem';
 
 
-export const us_styles = {
+export const us_styles = theme => ({
     mainContainer: {
         display: 'flex',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        height: '100vh',
+        paddingBottom: 100,
     },
     leftSide: {
-        width: '50%',
-        '@media screen and (max-width: 800px) ': {
+        width: '48%',
+        paddingLeft: '2%',
+        [theme.breakpoints.down('md')]: {
             width: '100%',
         }
     },
     rightSide: {
         width: '50%',
-        '@media screen and (max-width: 800px) ': {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        [theme.breakpoints.down('md')]: {
             width: '100%',
         }
     },
@@ -53,14 +59,13 @@ export const us_styles = {
     title: {
         color: regularGray,
         textTransform: 'uppercase',
-        fontSize: '5em',
-        padding: '50px 0px',
+        padding: '50px 60px',
         lineHeight: '1.3',
-        '@media screen and (max-width: 800px) ': {
-            fontSize: '3.5em'
+        [theme.breakpoints.down('md')]: {
+            fontSize: '4rem'
         },
-        '@media screen and (max-width: 400px) ': {
-            fontSize: '2em'
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '3rem'
         }
     },
     yellowLine: {
@@ -70,4 +75,4 @@ export const us_styles = {
         height: 10
     }
 
-}
+})
